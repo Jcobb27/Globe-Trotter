@@ -1,0 +1,14 @@
+.number {
+    font-size: 40px;
+}
+
+.toggle {
+    
+    width: 50%;
+}
+
+.stateCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
