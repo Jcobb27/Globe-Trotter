@@ -2,8 +2,8 @@ import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input } from 'reactstrap';
 
 const buttonStyle = {
-    marginRight: '30px',
-    marginLeft: '920px'
+    marginTop: '-63px',
+    marginLeft: '1350px'
 }
 
 class AddModal extends React.Component {
@@ -25,7 +25,7 @@ class AddModal extends React.Component {
     render() {
         return (
             <div>
-                <Button color="secondary" onClick={this.toggle}>{this.props.buttonLabel}Add Location</Button>
+                <Button style={buttonStyle} color="secondary" onClick={this.toggle}>{this.props.buttonLabel}Add Location</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader toggle={this.toggle}>Add Location</ModalHeader>
                     <ModalBody>
