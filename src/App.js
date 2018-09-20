@@ -20,6 +20,11 @@ const h1Style = {
   textShadow: '1px 1px 1px black'
 };
 
+const buttonStyle = {
+  marginLeft: '1600px',
+  marginTop: '80px'
+}
+
 
 class App extends Component {
   goTo(route) {
@@ -46,7 +51,8 @@ class App extends Component {
               <Hero backgroundImage="assets/images/earth.jpeg">
 
                 <h1 style={h1Style}>Globe Trotters</h1>
-                <Button
+                <Button 
+                style={buttonStyle}
                 id="qsLoginBtn"
                 bsStyle="secondary"
                 className="btn-margin"
@@ -92,6 +98,7 @@ class App extends Component {
               <Hero backgroundImage="assets/images/earth.jpeg">
                 <h1>Globe Trotters</h1>
                 <Button
+                 style={buttonStyle}
                 id="qsLogoutBtn"
                 bsStyle="secondary"
                 className="btn-margin"
