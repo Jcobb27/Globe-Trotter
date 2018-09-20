@@ -5,7 +5,8 @@ import Container from "./components/Container";
 import Row from "./components/Row";
 import Col from "./components/Col";
 import StateCard from "./components/StateCard"
-import CountryCard from "./components/CountryCard"
+import CountryCard from "./components/CountryCard";
+import AddModal from "./components/Modal";
 
 const pStyle = {
   fontSize: '22px',
@@ -42,7 +43,7 @@ class App extends Component {
           !isAuthenticated() && (
             <div>
               
-              <Hero backgroundImage="assets/images/plane_cropped.jpg">
+              <Hero backgroundImage="assets/images/earth.jpeg">
 
                 <h1 style={h1Style}>Globe Trotters</h1>
                 <Button
@@ -88,7 +89,7 @@ class App extends Component {
           isAuthenticated() && (
             <div>
               
-              <Hero backgroundImage="assets/images/plane_cropped.jpg">
+              <Hero backgroundImage="assets/images/earth.jpeg">
                 <h1>Globe Trotters</h1>
                 <Button
                 id="qsLogoutBtn"
@@ -98,6 +99,7 @@ class App extends Component {
               >
                 Log Out
                   </Button>
+                  <AddModal />
               </Hero>
               <Container style={{ marginTop: 50 }}>
                 <Row>
