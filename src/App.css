@@ -1,3 +1,6 @@
-.btn-margin {
-  margin: 7px 3px;
+#qsLogoutBtn, #qsLoginBtn {
+  position: relative;
+  float:right;
+  margin-right: 30px;
+  margin-top: 70px;
 }
