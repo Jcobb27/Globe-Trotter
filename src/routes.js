@@ -22,7 +22,9 @@ export const makeMainRoutes = () => {
           <Route path="/callback" render={(props) => {
             handleAuthentication(props);
             return <Callback {...props} /> 
+  
           }}/>
+          
         </div>
       </Router>
   );
