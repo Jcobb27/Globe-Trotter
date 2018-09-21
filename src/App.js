@@ -7,7 +7,9 @@ import Col from "./components/Col";
 import StateCard from "./components/StateCard"
 import CountryCard from "./components/CountryCard";
 import AddModal from "./components/Modal";
+import Map from "./components/Map";
 import "./App.css";
+
 
 const pStyle = {
   fontSize: '22px',
@@ -21,10 +23,6 @@ const h1Style = {
   textShadow: '1px 1px 1px black'
 };
 
-// const buttonStyle = {
-//   position: absolute,
-//   float: right,
-// };
 
 
 class App extends Component {
@@ -53,7 +51,7 @@ class App extends Component {
 
                 <h1 style={h1Style}>Globe Trotters</h1>
                 <Button 
-                // style={buttonStyle}
+     
                 id="qsLoginBtn"
                 bsStyle="secondary"
                 className="btn-margin"
@@ -99,7 +97,6 @@ class App extends Component {
               <Hero backgroundImage="assets/images/earth.jpeg">
                 <h1>Globe Trotters</h1>
                 <Button
-                //  style={buttonStyle}
                 id="qsLogoutBtn"
                 bsStyle="secondary"
                 className="btn-margin"
@@ -127,7 +124,13 @@ class App extends Component {
                   </Col>
 
                 </Row>
-
+              <br />
+              <br />
+                <Row >
+                <Col size="md-12">
+                <Map />
+                </Col>
+                </Row>
               </Container>
             </div>
 
