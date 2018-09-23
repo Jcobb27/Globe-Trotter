@@ -1,0 +1,15 @@
+db.locations.insert({
+    address: '3009 S. Horizon Place',
+    city: 'Oviedo',
+    state: 'Florida',
+    country: 'USA',
+    notes: 'coool',
+})
+
+db.locations.insert({
+    address: '444 Edgewater Drive',
+    city: 'Orlando',
+    state: 'Florida',
+    country: 'USA',
+    notes: 'verrryyy coool',
+})
