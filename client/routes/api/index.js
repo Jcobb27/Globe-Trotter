@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const locRoutes = require("./locations");
 
 // Location routes
 const locsController = require("../../controllers/locsController");
