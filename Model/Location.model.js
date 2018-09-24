@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var LocationSchema = new Schema({
     address: String,
     city: String,
-    state: String,
+    USstate: String,
     country: String,
     notes: String
 });

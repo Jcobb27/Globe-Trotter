@@ -15,4 +15,5 @@ router
   .put(locsController.update)
   .delete(locsController.remove);
 
+
 module.exports = router;

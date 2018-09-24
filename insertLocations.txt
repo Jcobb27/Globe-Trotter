@@ -1,7 +1,7 @@
 db.locations.insert({
     address: '3009 S. Horizon Place',
     city: 'Oviedo',
-    state: 'Florida',
+    USstate: 'Florida',
     country: 'USA',
     notes: 'coool',
 })
@@ -9,7 +9,7 @@ db.locations.insert({
 db.locations.insert({
     address: '444 Edgewater Drive',
     city: 'Orlando',
-    state: 'Florida',
+    USstate: 'Florida',
     country: 'USA',
     notes: 'verrryyy coool',
 })
