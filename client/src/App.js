@@ -26,6 +26,7 @@ const h1Style = {
 
 
 class App extends Component {
+
   goTo(route) {
     this.props.history.replace(`/${route}`)
   }
@@ -40,6 +41,7 @@ class App extends Component {
 
   render() {
     const { isAuthenticated } = this.props.auth;
+    const {bsStyle} = this.props;
 
     return (
       <div>

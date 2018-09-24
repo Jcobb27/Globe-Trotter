@@ -2,6 +2,7 @@
   "name": "centralized-login",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001/",
   "devDependencies": {
     "concurrently": "^4.0.1",
     "react-scripts": "0.9.5"
