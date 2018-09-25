@@ -5,6 +5,14 @@ export default {
   getLocs: function() {
     return axios.get("/api/locations");
   },
+  //Get all unique states
+  getStates: function(){
+    return axios.get("/api/locations/US/states");
+  },
+  //Get all unique country
+  getCountries: function(){
+    return axios.get("/api/locations/all/countries");
+  },
   // Gets the loc with the given id
   getLoc: function(id) {
     return axios.get("/api/locations/" + id);

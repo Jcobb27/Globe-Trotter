@@ -24,10 +24,10 @@ class StateCard extends Component {
     this.setState({ collapse: !this.state.collapse });
   }
 
- 
+
 
   loadStates = () => {
-    API.getLocs()
+    API.getStates()
       .then(res =>
         this.setState({ USstates: res.data })
       )
@@ -37,37 +37,44 @@ class StateCard extends Component {
 
   render() {
     console.log(this.state.USstates);
+    let numStates;
+    if(this.state.USstates){
+      console.log("length = " + this.state.USstates.length)
+      numStates = this.state.USstates.length;
+    }
+   
+
     return (
       <div>
         <Card className="stateCard" body outline color="primary">
           <CardTitle>US States You've Visited</CardTitle>
-          <CardText className="number" >25</CardText>
+          <CardText className="number" >{numStates}</CardText>
           <Button color="secondary" className="toggle" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Expand List</Button>
           <Collapse isOpen={this.state.collapse}>
             <Card>
               <CardBody>
-             
-              {this.state && this.state.USstates && 
-              <List>
-                {this.state.USstates.map(loc => (
-                  <ListItem key={loc._id}>
-                  
-                      <strong>
-                        {loc.USstate} 
-                      </strong>
-                   
-                  </ListItem>
-                ))}
-              </List>
-              }
+
+                {this.state && this.state.USstates &&
+                  <List>
+                    {this.state.USstates.map(loc => (
+                      <ListItem>
+
+                        <strong>
+                          {loc}
+                        </strong>
+
+                      </ListItem>
+                    ))}
+                  </List>
+                }
               </CardBody>
             </Card>
           </Collapse>
         </Card>
 
       </div >
-        )
-      }
-    }
-    
+    )
+  }
+}
+
 export default StateCard;

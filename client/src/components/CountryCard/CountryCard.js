@@ -25,7 +25,7 @@ class CountryCard extends Component {
   }
 
   loadCountries = () => {
-    API.getLocs()
+    API.getCountries()
       .then(res =>
         this.setState({ countries: res.data })
       )
@@ -33,11 +33,17 @@ class CountryCard extends Component {
   };
 
   render() {
+    console.log(this.state.countries);
+    let numCountries;
+    if(this.state.countries){
+      console.log("length = " + this.state.countries.length)
+      numCountries = this.state.countries.length;
+    }
     return (
       <div>
       <Card className= "stateCard" body outline color="primary">
         <CardTitle>Countries You've Visited</CardTitle>
-        <CardText className= "number" >5</CardText>
+        <CardText className= "number" >{numCountries}</CardText>
         <Button color="secondary" className= "toggle" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Expand List</Button>
         <Collapse isOpen={this.state.collapse}>
           <Card>
@@ -46,10 +52,10 @@ class CountryCard extends Component {
             {this.state && this.state.countries && 
               <List>
                 {this.state.countries.map(loc => (
-                  <ListItem key={loc._id}>
+                  <ListItem>
                   
                       <strong>
-                        {loc.country} 
+                        {loc} 
                       </strong>
                    
                   </ListItem>
