@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
 import { Collapse, Card, Button, CardTitle, CardBody, CardText } from 'reactstrap';
+import API from "../../utils/API";
+import { List, ListItem } from "../List";
 import "./CountryCard.css";
 
+
 class CountryCard extends Component {
+  state = {
+    countries: []
+  }
+  
+  componentDidMount() {
+    this.loadCountries();
+  }
+  
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
@@ -12,6 +23,14 @@ class CountryCard extends Component {
   toggle() {
     this.setState({ collapse: !this.state.collapse });
   }
+
+  loadCountries = () => {
+    API.getLocs()
+      .then(res =>
+        this.setState({ countries: res.data })
+      )
+      .catch(err => console.log(err));
+  };
 
   render() {
     return (
@@ -23,10 +42,21 @@ class CountryCard extends Component {
         <Collapse isOpen={this.state.collapse}>
           <Card>
             <CardBody>
-              Anim pariatur cliche reprehenderit,
-               enim eiusmod high life accusamus terry richardson ad squid. Nihil
-               anim keffiyeh helvetica, craft beer labore wes anderson cred
-               nesciunt sapiente ea proident.
+
+            {this.state && this.state.countries && 
+              <List>
+                {this.state.countries.map(loc => (
+                  <ListItem key={loc._id}>
+                  
+                      <strong>
+                        {loc.country} 
+                      </strong>
+                   
+                  </ListItem>
+                ))}
+              </List>
+              }
+
             </CardBody>
           </Card>
         </Collapse>
