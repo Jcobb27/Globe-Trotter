@@ -33,5 +33,18 @@ module.exports = {
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+  },
+    findStates: function(req, res) {
+    db.Location
+      .find().distinct('USstate')
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  findCountries: function(req, res) {
+    db.Location
+      .find().distinct('country')
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   }
+
 };
