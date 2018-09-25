@@ -54,6 +54,7 @@ class AddForm extends React.Component {
                         <Label for="state">State</Label>
                         <Input onChange={this.handleInputChange} value={this.state.USstate} type="select" name="USstate" id="USstate">
                             <option></option>
+
                             <option >Alabama</option>
                             <option >Alaska</option>
                             <option >Arizona</option>
@@ -105,6 +106,7 @@ class AddForm extends React.Component {
                             <option >West Virginia</option>
                             <option >Wisconsin</option>
                             <option >Wyoming</option>
+
                             <option></option>
                             <option>--------US Outlying Territories--------</option>
                             <option></option>
