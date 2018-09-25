@@ -13,6 +13,8 @@ app.use(bodyParser.json());
 //   app.use(express.static("client/build"));
 // }
 
+app.disable('etag');
+
 // Add routes, both API and view
 app.use(routes);
 

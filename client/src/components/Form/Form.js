@@ -1,13 +1,9 @@
-
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import API from "../../utils/API";
-// import { Link } from "react-router-dom";
 
 class AddForm extends React.Component {
     state = {
-        USstates: [],
-        countries: [],
         address: "",
         city: "",
         USstate: "",
@@ -50,7 +46,7 @@ class AddForm extends React.Component {
                         <Input onChange={this.handleInputChange} value={this.state.address} type="address" name="address" id="address" />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="city">City</Label>
+                        <Label for="city">City*</Label>
                         <Input onChange={this.handleInputChange} value={this.state.city} type="city" name="city" id="city" />
                     </FormGroup>
 
@@ -122,7 +118,7 @@ class AddForm extends React.Component {
                     </FormGroup>
 
                     <FormGroup>
-                        <Label for="country">Country</Label>
+                        <Label for="country">Country*</Label>
                         <Input onChange={this.handleInputChange} value={this.state.country} type="select" name="country" id="country">
                             <option></option>
                             <option value="AF">Afghanistan</option>
