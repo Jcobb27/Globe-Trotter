@@ -40,7 +40,8 @@ class StateCard extends Component {
     let numStates;
     if(this.state.USstates){
       console.log("length = " + this.state.USstates.length)
-      numStates = this.state.USstates.length;
+      var filtered = this.state.USstates.filter(function(e){return e})
+      numStates = filtered.length;
     }
    
 
@@ -56,7 +57,7 @@ class StateCard extends Component {
 
                 {this.state && this.state.USstates &&
                   <List>
-                    {this.state.USstates.map(loc => (
+                    {filtered.map(loc => (
                       <ListItem>
 
                         <strong>
