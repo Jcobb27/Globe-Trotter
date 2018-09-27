@@ -10,7 +10,9 @@ var myIcon = L.icon({
   popupAnchor: [0, -41],
 });
 
+
 export default class TheMap extends Component {
+  
   state = {
     lat: 51.505,
     lng: -0.09,
@@ -19,13 +21,18 @@ export default class TheMap extends Component {
 
   componentDidMount() {
     navigator.geolocation.getCurrentPosition((position) => {
-      console.log(position);
+      console.log("Position" ,position);
     })
+  }
+
+  getLocation = () => {
+    
   }
   render() {
     const position = [this.state.lat, this.state.lng];
     return (
       <Map className="map" center={position} zoom={this.state.zoom}>
+        
         <TileLayer
           attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
