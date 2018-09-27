@@ -24,8 +24,6 @@ const h1Style = {
   textShadow: '1px 1px 1px black'
 };
 
-
-
 class App extends Component {
 
   goTo(route) {
@@ -40,9 +38,11 @@ class App extends Component {
     this.props.auth.logout();
   }
 
+
   render() {
+
     const { isAuthenticated } = this.props.auth;
-    const {bsStyle} = this.props;
+    // const {bsStyle} = this.props;
 
     return (
       <div>
@@ -112,7 +112,7 @@ class App extends Component {
               <Container style={{ marginTop: 50 }}>
                 <Row>
                   <Col size="md-12">
-                    <h1>Welcome, Bob!</h1>
+                    <h1>Welcome, Jenn!</h1>
                     <br />
                   </Col>
                 </Row>
