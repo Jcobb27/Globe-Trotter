@@ -10,26 +10,49 @@ var myIcon = L.icon({
   popupAnchor: [0, -41],
 });
 
+const MyPopupMarker = ({ children, position }) => (
+  <Marker position={position}
+  icon={myIcon}>
+    <Popup>{children}</Popup>
+  </Marker>
+)
+
+const MyMarkersList = ({ markers }) => {
+  const items = markers.map(({ key, ...props }) => (
+    <MyPopupMarker key={key} {...props} />
+  ))
+  return <div style={{ display: 'none' }}>{items}</div>
+}
 
 export default class TheMap extends Component {
-  
   state = {
-    lat: 51.505,
-    lng: -0.09,
+    lat: 28.5383,
+    lng: -81.3792,
     zoom: 13,
   }
 
   componentDidMount() {
     navigator.geolocation.getCurrentPosition((position) => {
-      console.log("Position" ,position);
+      console.log("Position: " ,position);
     })
   }
 
-  getLocation = () => {
     
-  }
+  
   render() {
     const position = [this.state.lat, this.state.lng];
+
+    const markers = [
+      { key: 'marker1', position: [43.0962, -79.0377], children: 'Niagra Falls' },
+      { key: 'marker2', position: [35.1495, -90.0490], children: 'Memphis' },
+      { key: 'marker3', position: [48.8566, -2.3522], children: 'Paris' },
+      { key: 'marker4', position: [39.8083, -104.9339], children: 'Colorado' },
+      { key: 'marker5', position: [21.3069, -157.8583], children: 'Hawaii' },
+      { key: 'marker6', position: [37.7749, -122.4194], children: 'Cali' },
+      { key: 'marker7', position: [-37.8136, 144.9631], children: 'Sydney' },
+      { key: 'marker7', position: [41.8781, -87.6298], children: 'Chi Town' },
+      { key: 'marker7', position: [47.6062, -122.3321], children: 'Seattle' },
+    ]
     return (
       <Map className="map" center={position} zoom={this.state.zoom}>
         
@@ -44,6 +67,7 @@ export default class TheMap extends Component {
             You've Visited Here! <br /> Amaze-Ballz!
       </Popup>
         </Marker>
+        <MyMarkersList markers={markers} />
       </Map>
     );
   }

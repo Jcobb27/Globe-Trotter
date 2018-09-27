@@ -2,14 +2,70 @@ db.locations.insert({
     address: '3009 S. Horizon Place',
     city: 'Oviedo',
     USstate: 'Florida',
-    country: 'USA',
+    country: 'United States',
     notes: 'coool',
 })
 
 db.locations.insert({
-    address: '444 Edgewater Drive',
-    city: 'Orlando',
-    USstate: 'Florida',
-    country: 'USA',
-    notes: 'verrryyy coool',
+    address: '6650 Niagara Parkway',
+    city: 'Ontario',
+    USstate: '',
+    country: 'Canada',
+    notes: 'Niagra Falls',
+})
+
+db.locations.insert({
+    address: '71 N. Tucker St.',
+    city: 'Memphis',
+    USstate: 'Tennessee',
+    country: 'United States',
+    notes: 'Niagra Falls',
+})
+
+db.locations.insert({
+    address: '18 Rue de Paradis',
+    city: 'Paris',
+    USstate: '',
+    country: 'France',
+    notes: 'Oh La La',
+})
+
+db.locations.insert({
+    address: '6550 Gateway Rd',
+    city: 'Commerce City',
+    USstate: 'Colorado',
+    country: 'United States',
+    notes: 'Weeeee!',
+})
+
+db.locations.insert({
+    address: '1 Jarrett White Rd.',
+     city: 'Honolulu',
+     USstate: 'Hawaii',
+     country: 'United States',
+     notes: 'Fort Shafter',
+})
+
+db.locations.insert({
+    address: '100 John F Kennedy Dr',
+     city: 'San Francisco',
+     USstate: 'California',
+     country: 'United States',
+     notes: 'Cali',
+})
+
+db.locations.insert({
+    address: 'Parkville VIC 3010',
+     city: 'Melbourne',
+     USstate: '',
+     country: 'Australia',
+     notes: 'Sydney',
+})
+
+db.locations.insert({
+    address: '4501 N Clarendon Ave',
+     city: 'Chicago',
+     USstate: 'Illinois',
+     country: 'United States',
+     notes: 'Chi Town',
 })
