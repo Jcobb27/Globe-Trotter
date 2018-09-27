@@ -7,8 +7,9 @@ import Col from "./components/Col";
 import StateCard from "./components/StateCard"
 import CountryCard from "./components/CountryCard";
 import AddModal from "./components/Modal";
-import Map from "./components/Map";
+import TheMap from "./components/TheMap";
 import "./App.css";
+
 
 
 const pStyle = {
@@ -130,7 +131,7 @@ class App extends Component {
               <br />
                 <Row >
                 <Col size="md-12">
-                <Map />
+                <TheMap />
                 </Col>
                 </Row>
               </Container>
