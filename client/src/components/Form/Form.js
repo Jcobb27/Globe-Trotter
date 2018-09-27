@@ -32,7 +32,7 @@ class AddForm extends React.Component {
                 country: this.state.country,
                 notes: this.state.notes
             })
-                .then(res => console.log(res))
+                .then(location.reload())
                 .catch(err => console.log(err));
         }
     };

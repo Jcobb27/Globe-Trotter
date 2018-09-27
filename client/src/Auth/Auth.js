@@ -8,7 +8,7 @@ export default class Auth {
     clientID: AUTH_CONFIG.clientId,
     redirectUri: AUTH_CONFIG.callbackUrl,
     responseType: 'token id_token',
-    scope: 'openid'
+    scope: 'openid profile'
   });
 
   constructor() {
@@ -17,7 +17,7 @@ export default class Auth {
     this.handleAuthentication = this.handleAuthentication.bind(this);
     this.isAuthenticated = this.isAuthenticated.bind(this);
   }
-
+  
   login() {
     this.auth0.authorize();
   }
@@ -25,8 +25,12 @@ export default class Auth {
   handleAuthentication() {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
+        console.log(authResult);
+        const firstName = (authResult.idTokenPayload.given_name);
         this.setSession(authResult);
         history.replace('/home');
+        console.log('handle auth first name ' + firstName);
+        return firstName;
       } else if (err) {
         history.replace('/home');
         console.log(err);
@@ -34,6 +38,7 @@ export default class Auth {
       }
     });
   }
+
 
   setSession(authResult) {
     // Set the time that the access token will expire at
