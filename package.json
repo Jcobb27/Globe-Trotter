@@ -1,6 +1,9 @@
 {
   "name": "centralized-login",
   "version": "1.0.0",
+  "engines": {
+    "node": "10.10.0"
+  },
   "description": "",
   "main": "server.js",
   "scripts": {
